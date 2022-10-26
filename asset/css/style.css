@@ -9,17 +9,23 @@ body {
     font-family: 'Inter', "Poppins";
     font-weight: 200;
     background-color: rgb(220, 212, 212);
+    background-image: url('../images/food.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
 }
 
 .form{
     display:flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     height: 100vh;
+    padding-right: 50px;
 }
 
 h1{
     font-size: 30px;
+    color:white;
     font-weight: 600px;
     line-height: 100px;
     text-align: center;
