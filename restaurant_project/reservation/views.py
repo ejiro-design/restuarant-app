@@ -7,6 +7,6 @@ from django.template import loader
 def index(request):
     template = loader.get_template('reservation/index.html')
     context = {
-        'latest_question_list': 3,
+        'menu':['Jollof Rice', 'Beans porridge', 'Potato Fries', 'Egusi soup']
     }
     return HttpResponse(template.render(context, request))
