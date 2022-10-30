@@ -7,8 +7,12 @@ from .models import Menu
 from .models import Bookings
 
 def index(request):
+    if (request.POST):
+        query = Bookings(name=request.POST['name'], email=request.POST['email'], menu=request.POST['menu'], seats=request.POST['seats'], date=request.POST['date'], time=request.POST['time'])
+        query.save()
+    menuItems = Menu.objects.order_by('name')
     template = loader.get_template('reservation/index.html')
     context = {
-        'menu':['Jollof Rice', 'Beans porridge', 'Potato Fries', 'Egusi soup']
+        'menu': menuItems
     }
     return HttpResponse(template.render(context, request))

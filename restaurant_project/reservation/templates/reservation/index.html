@@ -12,20 +12,21 @@
 </head>
 
 <body>
-    <form class="form">
+    <form class="form" method="POST">
+        {% csrf_token %}
         <div id="container">
             <h1>MAKE A RESERVATION</h1>
             <div class="form-field">
-                <input type="text" placeholder="Your name">
-                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Your name" name="name">
+                <input type="email" placeholder="Email" name="email">
             </div>
             <div class="form-field">
-                <select>
+                <select name="menu">
                     {% for item  in menu %}
-                    <option>{{ item  }}</option>
+                    <option value="{{ item.id }}">{{ item.name }}</option>
                     {% endfor %}
                 </select>
-                <select name="option" id="size">
+                <select name="seats" id="size">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -34,8 +35,8 @@
                     <option value="6">6</option>
                     <option value="7">7</option>
                 </select>     
-                <input type="date" placeholder="Date">
-                <input type="time" placeholder="time">
+                <input type="date" placeholder="Date" name="date">
+                <input type="time" placeholder="time" name="time">
             </div>
             <div class="submit-btn"><button class="btn">SUBMIT</button></div>
         </div>
