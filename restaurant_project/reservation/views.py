@@ -8,7 +8,8 @@ from .models import Bookings
 
 def index(request):
     if (request.POST):
-        query = Bookings(name=request.POST['name'], email=request.POST['email'], menu=request.POST['menu'], seats=request.POST['seats'], date=request.POST['date'], time=request.POST['time'])
+        menuOption = Menu.objects.get(id=request.POST['menu'])
+        query = Bookings(name=request.POST['name'], email=request.POST['email'], menu=menuOption, seats=request.POST['seats'], date=request.POST['date'], time=request.POST['time'])
         query.save()
     menuItems = Menu.objects.order_by('name')
     template = loader.get_template('reservation/index.html')
