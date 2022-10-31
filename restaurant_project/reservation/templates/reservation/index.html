@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form class="form" method="POST">
+    <form class="form" method="POST" onsubmit="confirm('Are you sure you want to submit?')">
         {% csrf_token %}
         <div id="container">
             <h1>MAKE A RESERVATION</h1>
@@ -37,6 +37,10 @@
                 </select>     
                 <input type="date" placeholder="Date" name="date">
                 <input type="time" placeholder="time" name="time">
+            </div>
+            <div>
+                <div style="color:red">{{ error }}</div>
+                <div style="color:blue">{{ sucess }}</div>
             </div>
             <div class="submit-btn"><button class="btn">SUBMIT</button></div>
         </div>
