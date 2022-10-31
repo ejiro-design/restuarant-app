@@ -1,30 +1,24 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![CI logo]()
 
-Welcome ejiro-design,
+## Introduction
+welcome to my bookings/reservation form
+the site is a booking system that is friendly for users of all age to use for booking meals
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## User stories
+* The user is able to nagivate around the form, they are able to manage seats for tables for friends or family, 
+* You book mutiple tables 
+* User can view list of menu and make a choice from a list of options
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Features
 
-## Gitpod Reminders
+* The form features, Name field, Email field, the menu options, drop of to pick no of seats, time and date
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## future features
 
-`python3 -m http.server`
+* create a username and password for login
+* user will create an account to be able to login
 
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
+## FlowChart
 
 1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
 2. Scroll down to the *API Key* and click *Reveal*
