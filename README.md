@@ -28,7 +28,9 @@ the site is a booking system that is friendly for users of all age to use for bo
 * Html and CSS
 
  ## Testing
- 
+ * css validator : No errors was found after checked
+ * Html validator: no errors was found
+ * test cases (user story based with screenshots)
 
 1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
 2. Scroll down to the *API Key* and click *Reveal*
