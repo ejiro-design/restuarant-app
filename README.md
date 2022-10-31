@@ -19,6 +19,16 @@ the site is a booking system that is friendly for users of all age to use for bo
 * user will create an account to be able to login
 
 ## FlowChart
+![Flowchart](restaurant_project/reservation/static/reservation/images/reservation_form.png)
+
+## Technology
+* Python
+* Django
+* Javascript
+* Html and CSS
+
+ ## Testing
+ 
 
 1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
 2. Scroll down to the *API Key* and click *Reveal*
