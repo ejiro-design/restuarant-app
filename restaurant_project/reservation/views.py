@@ -8,16 +8,17 @@ from .models import Bookings
 
 
 def index(request):
-    context = {}
+    context = {'menu': "", 'error': "", 'success': ""}
     if (request.POST):
-        existing = Bookings.objects.get(name=request.POST['name'], email=request.POST['email'], date=request.POST['date'], time=request.POST['time'])
-        if (existing):
-            Context.error = 'Double booking detected'
-        menuOption = Menu.objects.get(id=request.POST['menu'])
-        query = Bookings(name=request.POST['name'], email=request.POST['email'], menu=menuOption, seats=request.POST['seats'], date=request.POST['date'], time=request.POST['time'])
-        query.save()
-        context.success = "Booking sucessfull"
+        try:
+            existing = Bookings.objects.get(name=request.POST['name'], email=request.POST['email'], date=request.POST['date'], time=request.POST['time'])
+            context['error'] = 'Double booking detected'
+        except:
+            menuOption = Menu.objects.get(id=request.POST['menu'])
+            query = Bookings(name=request.POST['name'], email=request.POST['email'], menu=menuOption, seats=request.POST['seats'], date=request.POST['date'], time=request.POST['time'])
+            query.save()
+            context['success'] = "Booking sucessfull"
     menuItems = Menu.objects.order_by('name')
     template = loader.get_template('reservation/index.html')
-    context.menu = menuItems
+    context['menu'] = menuItems
     return HttpResponse(template.render(context, request))

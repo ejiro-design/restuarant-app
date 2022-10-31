@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <form class="form" method="POST" onsubmit="confirm('Are you sure you want to submit?')">
+    <form class="form" method="POST" onsubmit="return confirm('Are you sure you want to submit?')">
         {% csrf_token %}
         <div id="container">
             <h1>MAKE A RESERVATION</h1>
             <div class="form-field">
-                <input type="text" placeholder="Your name" name="name">
-                <input type="email" placeholder="Email" name="email">
+                <input type="text" placeholder="Your name" name="name" required="true">
+                <input type="email" placeholder="Email" name="email" required="true">
             </div>
             <div class="form-field">
                 <select name="menu">
@@ -35,12 +35,12 @@
                     <option value="6">6</option>
                     <option value="7">7</option>
                 </select>     
-                <input type="date" placeholder="Date" name="date">
-                <input type="time" placeholder="time" name="time">
+                <input type="date" placeholder="Date" name="date" required="true">
+                <input type="time" placeholder="time" name="time" required="'true">
             </div>
             <div>
                 <div style="color:red">{{ error }}</div>
-                <div style="color:blue">{{ sucess }}</div>
+                <div style="color:blue">{{ success }}</div>
             </div>
             <div class="submit-btn"><button class="btn">SUBMIT</button></div>
         </div>
