@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+development = os.environ.get('DEVELOPMENT', False)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET KEY', 'django-insecure-zw!le3!hfvqxky9=-=mbnm+(6((y&bb0nm-*_3t1-h2vbq+91@')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost'] 
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
 
@@ -76,16 +81,29 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd2nivet2imfdii',
-       'USER': 'mgbfinjzziwhnq',
-       'PASSWORD': '9e9992fe6e56c85b360a9e055b6849af019fc3d990729ee75afa78aa6e357897',
-       'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
-       'PORT': '5432',
-   }
-}
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd2nivet2imfdii',
+            'USER': 'mgbfinjzziwhnq',
+            'PASSWORD': '9e9992fe6e56c85b360a9e055b6849af019fc3d990729ee75afa78aa6e357897',
+            'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
+
+
+    # DATABASES = {
+    #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    # }
 
 
 # Password validation
