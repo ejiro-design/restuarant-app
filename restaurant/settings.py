@@ -90,21 +90,8 @@ if development:
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'd2nivet2imfdii',
-            'USER': 'mgbfinjzziwhnq',
-            'PASSWORD': '9e9992fe6e56c85b360a9e055b6849af019fc3d990729ee75afa78aa6e357897',
-            'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
-            'PORT': '5432',
-        }
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-
-
-    # DATABASES = {
-    #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    # }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
