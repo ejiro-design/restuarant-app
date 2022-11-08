@@ -29,16 +29,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRETKEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
-ALLOWED_HOSTS = ['restaurant-app3.herokuapp.com', 'localhost']
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
-# if development:
-#     ALLOWED_HOSTS = ['localhost']
-# else:
-#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
-# CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
 
 # Application definition
