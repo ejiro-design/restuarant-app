@@ -9,7 +9,7 @@ body {
     font-family: 'Inter', "Poppins";
     font-weight: 200;
     background-color: rgb(220, 212, 212);
-    background-image: url('../images/food.jpg');
+    background-image: url('https://res.cloudinary.com/ds7i42bh1/image/upload/v1668095417/static/reservation/images/food.eb34381a8af8.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
