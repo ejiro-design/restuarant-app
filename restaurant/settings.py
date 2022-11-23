@@ -33,6 +33,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['restaurant-app3.herokuapp.com', 'localhost']
 
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+}
+
 
 # Application definition
 
