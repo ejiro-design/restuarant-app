@@ -22,3 +22,8 @@ def index(request):
     template = loader.get_template('reservation/index.html')
     context['menu'] = menuItems
     return HttpResponse(template.render(context, request))
+
+
+def add_item(request):
+    return render(request, 'reservation/add_item.html')
+

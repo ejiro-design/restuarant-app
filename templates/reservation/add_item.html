@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant booking">
+    <meta name="keywords" content="customer, food, menu">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="{% static 'reservation/css/style.css' %}">
+</head>
+
+<body>
+    <form class="form" method="POST" onsubmit="return confirm('Are you sure you want to submit?')">
+        {% csrf_token %}
+        <div id="container">
+            <h1>ADD A NEW ITEM:</h1>
+    </form>
+</body>
+
+</html>
