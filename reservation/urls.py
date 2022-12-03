@@ -1,8 +1,8 @@
 from django.urls import path
 
-from . import views, add_item
+from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('add', add_item, name='add')
+    path('manage', views.manage, name='manage')
 ]

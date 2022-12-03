@@ -24,6 +24,13 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def add_item(request):
-    return render(request, 'reservation/add_item.html')
+def manage(request):
+    context = {'bookings': "", 'error': "", 'success': ""}
+    if request.method == 'POST':
+        item_id = request.POST.get('item_id')
+        bookings.objects.delete('item_id')
+    bookings = Bookings.objects.all()
 
+    template = loader.get_template('reservation/manage.html')
+    context['bookings'] = bookings
+    return HttpResponse(template.render(context, request))

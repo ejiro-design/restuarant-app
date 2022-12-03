@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import UserManager
 
 # Create your models here.
 
@@ -18,6 +19,7 @@ class Bookings(models.Model):
     seats = models.IntegerField(default=0)
     date = models.DateField()
     time = models.TimeField()
+    objects = UserManager()
 
     def __str__(self):
         return self.name + ' (' + self.email + ')'

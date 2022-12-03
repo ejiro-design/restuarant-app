@@ -13,10 +13,20 @@
 </head>
 
 <body>
-    <form class="form" method="POST" onsubmit="return confirm('Are you sure you want to submit?')">
+    <form class="form" method="POST" action="manage">
         {% csrf_token %}
         <div id="container">
-            <h1>ADD A NEW ITEM:</h1>
+            <h1>MANAGE ITEM</h1>
+            <ul style="color: white">
+                {% for item  in bookings %}
+                <li>{{ item.name }}
+                    <button value="{{ item.id }}" name="item_id">
+                        delete
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </form>
 </body>
 
