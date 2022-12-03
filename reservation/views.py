@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from django.http import HttpResponse
@@ -24,6 +25,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
+# @login_required
 def manage(request):
     context = {'bookings': "", 'error': "", 'success': ""}
     if request.method == 'POST':
