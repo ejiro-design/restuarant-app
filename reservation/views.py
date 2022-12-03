@@ -25,7 +25,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-@login_required
+# @login_required
 def manage(request):
     context = {'bookings': "", 'error': "", 'success': ""}
     if request.method == 'POST':
