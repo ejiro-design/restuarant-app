@@ -67,6 +67,28 @@ h1{
     justify-content: center;
 }
 
+/* Manage page */
+
+td{
+    padding: 15px;
+}
+
+th{
+    padding: 15px;
+    text-align: left;
+}
+
+table{
+    overflow-y: auto;
+}
+
+td button{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
 @media screen and (max-width: 563px){
     .form{
         padding-right: 10px;

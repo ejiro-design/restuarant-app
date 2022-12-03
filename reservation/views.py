@@ -28,9 +28,9 @@ def manage(request):
     context = {'bookings': "", 'error': "", 'success': ""}
     if request.method == 'POST':
         item_id = request.POST.get('item_id')
-        bookings.objects.delete('item_id')
-    bookings = Bookings.objects.all()
+        Bookings.objects.filter(id=item_id).delete()  
 
+    bookings = Bookings.objects.all()
     template = loader.get_template('reservation/manage.html')
     context['bookings'] = bookings
     return HttpResponse(template.render(context, request))
